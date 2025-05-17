@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="busqueda.css">
+    <title>Busqueda Libro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <object class="logopagina" type="image/svg+xml" data="imagenes/logopagina.svg"></object>
+        </div>
+        <div class="searchbar">
+            <input type="text" placeholder="Buscar Libro por Nombre/ISBN/Autor"/>
+            <button type="button"><i class="bi bi-search"></i></button> 
+        </div>
+        <div class="options">
+            <div class="options">
+                <button type="button" aria-expanded="false" aria-controls="menu" aria-label="mostrar opciones" class="boton-lista-header"><i class="bi bi-list" style="color:black;"></i></button>
+                <button type="button" aria-label="usuario" class="boton-usuario-header"><img src="imagenes/user.png" width="20px"></button>
+                <a href="carrito.html"><button type="button" aria-label="lista de compra" class="boton-compra-header"> <i class="bi bi-cart" style="color:black;"></i> <!-- <img src="imagenes/bitmap.png"> --></button></a>
+                <div class="cart-dropdown" id="cartDropdown">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <p class="results-text">Mostrando resultados de: <span>x</span></p>
+        
+        <div class="books-container">
+            <!-- Libro 1 -->
+            <div class="book-item">
+                <div class="book-image"><!-- Imagen-->  <img loading="lazy" src="imagenes/harrypotter.jpg"></div>
+                <div class="book-info">
+                    <h3>Nombre Libro <span>⭐⭐⭐⭐⭐</span></h3>
+                    <p>Nombre Autor</p>
+                    <p>Nombre Editorial</p>
+                    <p>Stock: Sí/No</p>
+                    <div class="price-cart">
+                        <span class="price">$$$</span>
+                        <button class="cart-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repite este bloque para cada libro adicional -->
+            <div class="book-item">
+                <div class="book-image"><!-- Imagen-->  <img loading="lazy" src="imagenes/laeraimperial.jpg"></div>
+                <div class="book-info">
+                    <h3>Nombre Libro <span>⭐⭐⭐⭐⭐</span></h3>
+                    <p>Nombre Autor</p>
+                    <p>Nombre Editorial</p>
+                    <p>Stock: Sí/No</p>
+                    <div class="price-cart">
+                        <span class="price">$$$</span>
+                        <button class="cart-button">
+                            <i class="bi bi-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-links">
+            <h3>Más Información</h3>
+            <ul>
+                <a href="info.html" style="text-decoration: none; color: white;"><li>Sobre Nosotros</li>
+                    <a href="https://www.mozilla.org/es-ES/privacy/" style="text-decoration: none; color: white;"><li>Política de privacidad</li></a>
+                    <a href="https://www.fundacionconama.org/politica-de-cookies/" style="text-decoration: none; color: white;"><li>Política de cookies</li></a>
+                    <a href="https://superadmin.es/blog/privacidad/plantilla-aviso-legal/" style="text-decoration: none; color: white;"><li>Aviso legal</li></a>
+                    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1998-8789" style="text-decoration: none; color: white;"><li>Condiciones generales de contratación</li></a>
+            </ul>
+        </div>
+        <div class="social-media">
+            <object class="logopagina" type="image/svg+xml" data="imagenes/logopagina.svg"></object>
+            <div class="social-icons">
+                    <div class="icon"><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Des_ES"><i class="bi bi-facebook"></i></a></div>
+                    <div class="icon"><a href="https://x.com/?lang=es"><i class="bi bi-twitter"></i></a></div>
+                    <div class="icon"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></a></i></div>
+                    <div class="icon"><a href="https://workspace.google.com/intl/es/gmail/"><i class="bi bi-envelope"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // lista compra:
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const cartBtn = document.querySelector('.boton-compra-header');
+    const dropdown = document.getElementById('cartDropdown');
+    let hideTimeout;
+
+    function showDropdown() {
+        clearTimeout(hideTimeout);
+        loadCartItems();
+        dropdown.style.display = 'block';
+    }
+
+    function hideDropdown() {
+        hideTimeout = setTimeout(() => {
+            dropdown.style.display = 'none';
+        }, 300);
+    }
+
+    cartBtn.addEventListener('mouseenter', showDropdown);
+    cartBtn.addEventListener('mouseleave', hideDropdown);
+    dropdown.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+    dropdown.addEventListener('mouseleave', hideDropdown);
+
+    function loadCartItems() {
+        dropdown.innerHTML = '';
+        const cart = JSON.parse(localStorage.getItem('library')) || [];
+
+        if (cart.length === 0) {
+            dropdown.innerHTML = '<p style="color:red;">Carrito vacío</p>';
+            return;
+        }
+
+        cart.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+            const imageName = item.title.toLowerCase().replace(/\s+/g, '') + '.jpg';
+
+            itemDiv.innerHTML = `
+                <img src="imagenes/${imageName}" alt="${item.title}">
+                <div class="cart-item-title">
+                    <p style="color:black;">${item.title}</p>
+                    <p style="color:black;">€€€</p>
+                </div>
+            `;
+            dropdown.appendChild(itemDiv);
+        });
+    }
+});
+    </script>
+
+</body>
+</html>

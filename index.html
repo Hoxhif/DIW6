@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, no follow">
+    <meta name="description" content="Compra libros online al mejor precio. Encuentra una amplia selección de géneros: novelas, ciencia, historia y más. Ofertas exclusivas y envíos rápidos. ¡Explora ahora!">
+    <title>LandingPage</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script> <!-- Fabric.js -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <!-- <img class="logopagina" src="imagenes/logo3.png"> -->
+                <object class="logopagina" type="image/svg+xml" data="imagenes/logopagina.svg"></object>
+            </div>
+            <div class="searchbar">
+                <input type="text" placeholder="Buscar Libro por Nombre/ISBN/Autor"/>
+                <button type="button" class="botoncomprar"> <a href="busqueda.html"><img src="imagenes/lupa.png" alt="Buscar" width="20px"></button></a><!--<i class="bi bi-search"></i> --> 
+            </div>
+            <div class="options">
+                <button type="button" aria-expanded="false" aria-controls="menu" aria-label="mostrar opciones" class="boton-lista-header"><i class="bi bi-list"></i></button>
+                <button type="button" aria-label="usuario" class="boton-usuario-header"> <i class="bi bi-person-circle"></i>  <!--<img src="imagenes/user.png"> --></button>
+                <a href="carrito.html"><button type="button" aria-label="lista de compra" class="boton-compra-header"> <i class="bi bi-cart"></i> <!-- <img src="imagenes/bitmap.png"> --></button></a>
+                <div class="cart-dropdown" id="cartDropdown">
+                    
+                </div>
+            </div>
+        </header>
+    
+        <main role="main">
+            <div class="featured-image">
+                <!--   <p>IMAGEN DESTACADA</p>-->  <img src="imagenes/heroNegro.png">
+            </div>
+            <div class="animated-bar"></div>
+                            <iframe 
+                    src="banner.html" 
+                    width="500" 
+                    height="250" 
+                    frameborder="0"
+                ></iframe>
+
+                <div class="carrousel">
+                    <div class="slides">
+                        <div class="slide active"><img src="imagenes/carrousel1.jpg" alt="Producto 1" width="500"></div>
+                        <div class="slide"><img src="imagenes/carrousel2.jpg" alt="Producto 2" width="500"></div>
+                        <div class="slide"><img src="imagenes/carrousel3.jpg" alt="Producto 3" width="500"></div>
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div>
+                    <button id="back-to-top" class="back-to-top-btn" title="Volver arriba">
+                        ↑
+                      </button>
+                </div>
+                
+
+
+                  
+
+
+
+                  <section class="hero-section">
+                    <div class="book-container">
+                      <!-- <canvas id="book-animation"></canvas> -->
+                      <canvas id="particles-canvas"></canvas>
+                    </div>
+                    <div class="hero-content">
+                      <h1 class="hero-title">Abre las páginas de la aventura</h1>
+                      <p class="hero-subtitle">Explora mundos increíbles con cada lectura</p>
+                      <a href="libro.html" class="hero-button">Explorar ahora</a>
+                    </div>
+                  </section>
+
+                  <br>
+
+                  <iframe src="acordeon.html" width="100%" height="200px" frameborder="0"></iframe>
+                  
+                 
+  
+                <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  <script> -->
+
+                  
+  
+  
+
+               
+                            <!-- Efecto libro animado -->
+                <!-- <div class="hero-animation">
+                    <canvas id="book-animation"></canvas>
+                    <h2 class="hero-text">Descubre nuevos mundos</h2>
+                </div> -->
+
+
+                
+
+                
+                <div class="animated-bar"></div>
+            <p class="attribution">"<a rel="noopener noreferrer" 
+                href="https://www.flickr.com/photos/7777323@N02/4493395258">Stratford Library</a>" 
+                by <a rel="noopener noreferrer" href="https://www.flickr.com/photos/7777323@N02">Entressen kirjasto</a>
+                 is licensed under <a rel="noopener noreferrer"
+                  href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                   style="height: 1em; margin-right: 0.125em; display: inline;" /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                    style="height: 1em; margin-right: 0.125em; display: inline;" /></a>.</p>
+            <section class="book-section">
+                <article class="book-category" data-id="111" data-title="Harry Potter">
+                    <p class="seccionlibro">Ficción</p>
+                    <h3>HARRY POTTER</h3>
+                    <div class="book-image"><a href="libro.html">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                        <!-- <h3>IMAGEN</h3> -->
+                         <img class="lazy" src="imagenes/harrypotter.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button></a>
+                        
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="112" data-title="La niebla">
+                    <p class="seccionlibro">Terror</p>
+                    <h3>LA NIEBLA</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!--<h3>IMAGEN</h3> --><img class="lazy" src="imagenes/laniebla.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="113" data-title="Era de idiotas">
+                    <p class="seccionlibro">Comedia</p>
+                    <h3>ERA DE IDIOTAS</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!--<h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/eradeidiotas.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="114" data-title="El principe cautivo">
+                    <p class="seccionlibro">Fantasía</p>
+                    <h3>EL PRINCIPE CAUTIVO</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!--<h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/elprincipecautivo.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="121" data-title="Manolito gafotas">
+                    <p class="seccionlibro">Infantil</p>
+                    <h3>MANOLITO GAFOTAS</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!-- <h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/manolitogafotas.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="122" data-title="Mi alma es tuya">
+                    <p class="seccionlibro">Romántica</p>
+                    <h3>MI ALMA ES TUYA</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!-- <h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/mialmaestuya.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="123" data-title="La era imperial">
+                    <p class="seccionlibro">Historia</p>
+                    <h3>LA ERA IMPERIAL</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!--<h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/laeraimperial.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+                <article class="book-category" data-id="124" data-title="El mito">
+                    <p class="seccionlibro">Filosofía</p>
+                    <h3>EL MITO</h3>
+                    <div class="book-image">
+                        <button class="arrow-button left-arrow"><i class="bi bi-arrow-left"></i></button>
+                    <!--<h3>IMAGEN</h3> --> <img class="lazy" src="imagenes/elmito.jpg"/>
+                        <button class="arrow-button right-arrow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="book-price">
+                        <span class="price">€€€</span>
+                        <button class="buy-button"><i class="bi bi-cart"></i></button>
+                    </div>
+                </article>
+            </section>
+            <br>
+            <iframe src="navs.html" width="100%" height="auto" frameborder="0"></iframe>
+        </main>
+        
+        <footer>
+            <div class="footer-links">
+                <h3>Más Información</h3>
+                <ul>
+                    <a href="info.html" style="text-decoration: none; color: white;"><li>Sobre Nosotros</li>
+                    <a href="https://www.mozilla.org/es-ES/privacy/" style="text-decoration: none; color: white;"><li>Política de privacidad</li></a>
+                    <a href="https://www.fundacionconama.org/politica-de-cookies/" style="text-decoration: none; color: white;"><li>Política de cookies</li></a>
+                    <a href="https://superadmin.es/blog/privacidad/plantilla-aviso-legal/" style="text-decoration: none; color: white;"><li>Aviso legal</li></a>
+                    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1998-8789" style="text-decoration: none; color: white;"><li>Condiciones generales de contratación</li></a>
+                </ul>
+            </div>
+            <div class="social-media">
+                <object class="logopagina" type="image/svg+xml" data="imagenes/logopagina.svg"></object>
+                <div class="social-icons">
+                    <div class="icon"><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Des_ES"><i class="bi bi-facebook"></i></a></div>
+                    <div class="icon"><a href="https://x.com/?lang=es"><i class="bi bi-twitter"></i></a></div>
+                    <div class="icon"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></a></i></div>
+                    <div class="icon"><a href="https://workspace.google.com/intl/es/gmail/"><i class="bi bi-envelope"></i></a></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+<script>
+
+// lista compra:
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cartBtn = document.querySelector('.boton-compra-header');
+    const dropdown = document.getElementById('cartDropdown');
+    
+
+    // Mostrar al hacer hover
+    cartBtn.addEventListener('mouseenter', () => {
+        loadCartItems();
+        dropdown.style.display = 'block';
+    });
+
+    cartBtn.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+            if (!dropdown.matches(':hover')) {
+                dropdown.style.display = 'none';
+            }
+        }, 200);
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.style.display = 'none';
+    });
+
+    function loadCartItems() {
+        dropdown.innerHTML = ''; // Limpiar contenido
+
+        const cart = JSON.parse(localStorage.getItem('library')) || [];
+
+        if (cart.length === 0) {
+            dropdown.innerHTML = '<p style="color:red;">Carrito vacío</p>';
+            return;
+        }
+
+        cart.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+            const imageName = item.title.toLowerCase().replace(/\s+/g, '') + '.jpg';
+
+            itemDiv.innerHTML = `
+                <img src="imagenes/${imageName}" alt="${item.title}">
+                <div class="cart-item-title"><p style="color:black;">${item.title}</p> <p style="color:black;">€€€</p> </div>
+                
+            `;
+
+            dropdown.appendChild(itemDiv);
+        });
+    }
+});
+
+// comprar y añadir
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".buy-button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", event => {
+      const bookElement = event.target.closest(".book-category");
+      const bookId = bookElement.dataset.id;
+      const bookTitle = bookElement.dataset.title;
+
+      const book = {
+        id: bookId,
+        title: bookTitle
+      };
+
+      // Recuperar libros guardados
+      let library = JSON.parse(localStorage.getItem("library")) || [];
+
+      // Evitar duplicados
+      const alreadyExists = library.some(item => item.id === book.id);
+      if (!alreadyExists) {
+        library.push(book);
+        localStorage.setItem("library", JSON.stringify(library));
+        alert(`"${book.title}" añadido a tu biblioteca`);
+      } else {
+        alert(`"${book.title}" ya está en tu biblioteca`);
+      }
+    });
+  });
+});
+
+
+
+
+
+    // acordeon:
+    document.addEventListener('DOMContentLoaded', function () {
+    const accordion = document.getElementById('accordionExample');
+
+    if (!accordion) return;
+
+    accordion.addEventListener('show.bs.collapse', function (event) {
+        // Marcar como activo
+        const item = event.target.closest('.accordion-item');
+        item.classList.add('active');
+
+        // Cerrar otros
+        accordion.querySelectorAll('.accordion-collapse.show').forEach(openItem => {
+            if (openItem !== event.target) {
+                const collapseInstance = bootstrap.Collapse.getInstance(openItem);
+                if (collapseInstance) {
+                    collapseInstance.hide();
+                }
+            }
+        });
+    });
+
+    accordion.addEventListener('hide.bs.collapse', function (event) {
+        const item = event.target.closest('.accordion-item');
+        item.classList.remove('active');
+    });
+});
+
+
+
+
+    // Carrousel
+    document.addEventListener('DOMContentLoaded', function () {
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+let autoSlideInterval;
+
+function showSlide(index) {
+if (index < 0) index = slides.length - 1;
+if (index >= slides.length) index = 0;
+
+slides.forEach((slide, i) => {
+slide.classList.toggle('active', i === index);
+});
+
+dots.forEach((dot, i) => {
+dot.classList.toggle('active', i === index);
+});
+
+currentIndex = index;
+}
+
+function nextSlide() {
+showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+showSlide(currentIndex - 1);
+}
+
+function startAutoSlide() {
+autoSlideInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoSlide() {
+clearInterval(autoSlideInterval);
+}
+
+nextBtn.addEventListener('click', () => {
+nextSlide();
+stopAutoSlide();
+startAutoSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+prevSlide();
+stopAutoSlide();
+startAutoSlide();
+});
+
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+showSlide(index);
+stopAutoSlide();
+startAutoSlide();
+});
+});
+
+showSlide(currentIndex);
+startAutoSlide();
+});
+
+
+    
+    
+                // Botón "Volver arriba"
+                document.getElementById('back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento suave
+            });
+        });
+
+
+
+
+
+
+
+
+    // API DE OBSERVER
+    document.addEventListener('DOMContentLoaded', function() {
+        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const img = entry.target;
+img.src = img.dataset.src;
+img.classList.remove('lazy');
+observer.unobserve(img);
+}
+});
+});
+
+    });
+
+
+
+// API USADO EN EL BOTON DE COMPRAR:
+
+document.addEventListener('DOMContentLoaded', function() {
+const boton = document.getElementById('btnComprar');
+
+// Crear el observer
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        // Cuando el botón es visible, añadir la clase con animación
+        entry.target.classList.add('animado');
+        
+        // Opcional: dejar de observar si solo necesitas activarlo una vez
+        observer.unobserve(entry.target);
+    }
+});
+}, {
+threshold: 0.1 // Se activa cuando al menos el 10% del elemento es visible
+});
+
+// Comenzar a observar el botón
+observer.observe(boton);
+});
+
+document.querySelectorAll('.lazy').forEach(img => lazyImageObserver.observe(img));
+
+
+
+
+
+         // Función para hacer scroll al inicio de la página
+function scrollToTop() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth' // Desplazamiento suave
+});
+}
+
+// Detectar el atajo Shift + W
+document.addEventListener('keydown', function(event) {
+if (event.shiftKey && event.key.toLowerCase() === 'w') {
+event.preventDefault(); // Evitar cualquier acción por defecto
+scrollToTop();
+
+// Mostrar notificación en consola
+console.log('Atajo Shift+W activado - Scroll to top');
+}
+});
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const canvas = new fabric.Canvas('book-animation', {
+            backgroundColor: 'transparent',
+            interactive: true
+        });
+    
+        // Crear páginas del libro
+        const leftPage = new fabric.Rect({
+            width: 120,
+            height: 180,
+            fill: '#ffffff',
+            originX: 'right',
+            left: 150,
+            top: 90,
+            shadow: new fabric.Shadow('rgba(0,0,0,0.2) 5px 0 10px')
+        });
+    
+        const rightPage = new fabric.Rect({
+            width: 120,
+            height: 180,
+            fill: '#ffffff',
+            originX: 'left',
+            left: 150,
+            top: 90,
+            shadow: new fabric.Shadow('rgba(0,0,0,0.2) -5px 0 10px')
+        });
+    
+        const cover = new fabric.Group([
+            new fabric.Rect({
+                width: 250,
+                height: 190,
+                fill: '#9e4fdb',
+                rx: 5
+            }),
+            new fabric.Text('Libros', {
+                fontSize: 28,
+                fontFamily: 'Inter',
+                fill: 'white',
+                left: 125,
+                top: 80
+            })
+        ], {
+            originX: 'center',
+            originY: 'center',
+            left: 150,
+            top: 90
+        });
+    
+        // Animación de entrada automática
+        function animateEntrance() {
+            cover.animate('scaleX', 1.2, {
+                duration: 800,
+                easing: fabric.util.ease.easeOutElastic,
+                onChange: canvas.renderAll.bind(canvas),
+                onComplete: function() {
+                    // Revelar páginas
+                    canvas.add(leftPage, rightPage);
+                    leftPage.bringToFront();
+                    rightPage.bringToFront();
+                    
+                    // Animación de apertura
+                    leftPage.animate('left', 30, {
+                        duration: 1000,
+                        easing: fabric.util.ease.easeOutBack
+                    });
+                    
+                    rightPage.animate('left', 270, {
+                        duration: 1000,
+                        easing: fabric.util.ease.easeOutBack,
+                        onComplete: function() {
+                            // Mostrar texto
+                            document.querySelector('.hero-text').style.opacity = '1';
+                            
+                            // Efecto de páginas moviéndose
+                            setInterval(function() {
+                                leftPage.animate('top', 85, { duration: 2000 });
+                                rightPage.animate('top', 95, { duration: 2000 });
+                            }, 2000);
+                        }
+                    });
+                }
+            });
+        }
+    
+        // Iniciar animación al cargar
+        canvas.add(cover);
+        setTimeout(animateEntrance, 500);
+    
+        // Reiniciar animación al hacer clic
+        canvas.on('mouse:down', function() {
+            canvas.remove(leftPage, rightPage);
+            document.querySelector('.hero-text').style.opacity = '0';
+            cover.set({ scaleX: 1, left: 150, top: 90 });
+            canvas.renderAll();
+            animateEntrance();
+        });
+    });
+
+
+
+
+    // Animacion libro abriendose
+
+
+    const canvas = document.getElementById("particles-canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = document.querySelector(".book-container").offsetHeight;
+
+let time = 0;
+
+function drawWave() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.moveTo(0, canvas.height / 2);
+  for (let x = 0; x < canvas.width; x++) {
+    let y = canvas.height / 2 + Math.sin(x * 0.02 + time) * 20;
+    ctx.lineTo(x, y);
+  }
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  time += 0.03;
+  requestAnimationFrame(drawWave);
+}
+drawWave();
+    </script>
+</body>
+</html>
